@@ -20,9 +20,6 @@ export interface Option {
 import { ARTIST_OPTIONS } from "@/data/artistOptions";
 import DebugJson from "@/components/DebugJson";
 
-/** ROCK IN JAPAN FESTIVAL 2025 の出演アーティスト一覧 */
-
-
 /** メインコンポーネント */
 const MultiSelectWithChips: FC = () => {
   const [value, setValue] = useState<Option[]>([]);
@@ -33,7 +30,7 @@ const MultiSelectWithChips: FC = () => {
         multiple
         disableCloseOnSelect
         options={ARTIST_OPTIONS}
-        // filterSelectedOptions
+        // filterSelectedOptions // ここのコメントを外すと選択したものは一覧から消しこまれていく
         getOptionLabel={(option) => option.name}
         value={value}
         onChange={(_, newValue) => setValue(newValue)}
